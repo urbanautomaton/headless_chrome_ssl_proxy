@@ -26,7 +26,7 @@ RSpec.describe 'Proxied HTTPS requests' do
     )
   end
 
-  it 'makes a request via the proxy', type: :feature do
+  it 'makes a request via the proxy' do
     browser.get 'https://example.net/'
 
     expect(browser.page_source).to include('Example Domain')
