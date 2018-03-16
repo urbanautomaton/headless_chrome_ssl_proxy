@@ -34,6 +34,15 @@ Run the test in headless mode:
 This should block for ~1 minute, then fail with a `Net::ReadTimeout`
 error.
 
+## Versions
+
+Tested with:
+
+* MRI Ruby 2.4.3
+* selenium-webdriver 3.11.0
+* puffing-billy 1.0.0
+* Chrome 65.0.3325.162 / macOS 10.13.3
+
 ## Output
 
 Chromedriver logs and puffing-billy logs are written to `log/`, while
