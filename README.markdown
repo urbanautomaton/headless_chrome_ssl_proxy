@@ -43,6 +43,7 @@ Tested with:
 * selenium-webdriver 3.11.0
 * puffing-billy 1.0.0
 * Chrome 65.0.3325.162 / macOS 10.13.3
+* ChromeDriver 2.36.540469 (1881fd7f8641508feb5166b7cae561d87723cfa8)
 
 ## Output
 
