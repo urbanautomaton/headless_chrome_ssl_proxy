@@ -23,16 +23,17 @@ Clone the repo and install dependencies:
 
 Run the test without headless mode:
 
-    $ bundle exec rspec app_spec.rb
+    $ bundle exec ruby repro.rb
+    Pass!
 
 This should pass.
 
 Run the test in headless mode:
 
-    $ HEADLESS=true bundle exex rspec app_spec.rb
+    $ HEADLESS=true bundle exec ruby repro.rb
 
-This should block for ~1 minute, then fail with a `Net::ReadTimeout`
-error.
+This should block for ~1 minute, then fail with a `Errno::ECONNREFUSED`
+(itself occurring in an attempt to recover from a `Net::ReadTimeout`).
 
 ## Versions
 
