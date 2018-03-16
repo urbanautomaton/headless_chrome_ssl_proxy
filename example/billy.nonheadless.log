@@ -1,0 +1,6 @@
+# Logfile created on 2018-03-16 16:33:41 +0000 by logger.rb/56815
+I, [2018-03-16T16:33:41.370917 #50395]  INFO -- : puffing-billy: Proxy listening on http://localhost:64122
+I, [2018-03-16T16:33:42.558046 #50395]  INFO -- : puffing-billy: CACHE KEY for 'https://www.gstatic.com:443/chrome/intelligence/assist/ranker/models/translate/2017/03/translate_ranker_model_20170329.pb.bin' is 'get_www.gstatic.com_9a8ca1000b5c4929140b4f25448698e8c7b04e6c'
+I, [2018-03-16T16:33:42.748784 #50395]  INFO -- : puffing-billy: CACHE KEY for 'https://example.net:443/' is 'get_example.net_14a5c75eafb2fbbfe119d30889c1d068c95f5043'
+I, [2018-03-16T16:33:42.767794 #50395]  INFO -- : puffing-billy: PROXY GET succeeded for 'https://www.gstatic.com:443/chrome/intelligence/assist/ranker/models/translate/2017/03/translate_ranker_model_20170329.pb.bin'
+I, [2018-03-16T16:33:43.037626 #50395]  INFO -- : puffing-billy: PROXY GET succeeded for 'https://example.net:443/'

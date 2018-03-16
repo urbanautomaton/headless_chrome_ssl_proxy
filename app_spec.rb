@@ -1,13 +1,15 @@
+require 'logger'
 require 'selenium/webdriver'
 require 'billy'
+
+Billy.configure do |config|
+  config.logger = Logger.new('log/billy.log')
+end
 
 RSpec.describe 'Proxied HTTPS requests' do
   let(:browser) do
     options = Selenium::WebDriver::Chrome::Options.new
     options.headless! if ENV['HEADLESS']
-    options.add_argument('--user-data-dir=tmp/chrome')
-    options.add_argument('--enable-logging=stderr')
-    options.add_argument('--v=1')
     options.add_argument("--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}")
 
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome
@@ -19,8 +21,7 @@ RSpec.describe 'Proxied HTTPS requests' do
       options: options,
       driver_opts: {
         verbose: true,
-        log_path: 'chromedriver.log',
-        log_level: 3,
+        log_path: 'log/chromedriver.log'
       }
     )
   end
