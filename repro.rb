@@ -26,12 +26,16 @@ capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
   "acceptInsecureCerts" => true
 )
 
-driver = Selenium::WebDriver.for(:remote, desired_capabilities: capabilities)
+begin
+  driver = Selenium::WebDriver.for(:remote, desired_capabilities: capabilities)
+  driver.navigate.to 'https://example.net/'
 
-driver.navigate.to 'https://example.net/'
-
-if driver.page_source.include?('Example Domain')
-  puts 'Pass!'
-else
-  puts 'Fail!'
+  if driver.page_source.include?('Example Domain')
+    puts 'Pass!'
+  else
+    puts 'Fail!'
+  end
+ensure
+  driver.close
+  driver.quit
 end
