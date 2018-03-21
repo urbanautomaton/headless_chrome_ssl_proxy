@@ -27,7 +27,10 @@ capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
 )
 
 begin
-  driver = Selenium::WebDriver.for(:remote, desired_capabilities: capabilities)
+  driver = Selenium::WebDriver.for(
+    :remote,
+    desired_capabilities: capabilities
+  )
   driver.navigate.to 'https://example.net/'
 
   if driver.page_source.include?('Example Domain')
@@ -36,6 +39,8 @@ begin
     puts 'Fail!'
   end
 ensure
-  driver.close
-  driver.quit
+  if driver
+    driver.close
+    driver.quit
+  end
 end
