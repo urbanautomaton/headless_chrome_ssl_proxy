@@ -22,7 +22,10 @@ chrome_args = [
 chrome_args.push("--headless") if ENV["HEADLESS"]
 
 capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-  "chromeOptions" => { "args" => chrome_args },
+  "chromeOptions" => {
+    "args" => chrome_args,
+    "useAutomationExtension" => false
+  },
   "acceptInsecureCerts" => true
 )
 
