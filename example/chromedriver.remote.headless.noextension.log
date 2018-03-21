@@ -1,0 +1,401 @@
+[1521661435.877][INFO]: COMMAND InitSession {
+   "capabilities": {
+      "desiredCapabilities": {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "chromeOptions": {
+            "args": [ "--disable-web-security", "--proxy-server=localhost:56388", "--headless" ],
+            "useAutomationExtension": false
+         },
+         "cssSelectorsEnabled": true,
+         "javascriptEnabled": true,
+         "nativeEvents": false,
+         "rotatable": false,
+         "takesScreenshot": false,
+         "version": ""
+      },
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--disable-web-security", "--proxy-server=localhost:56388", "--headless" ],
+            "useAutomationExtension": false
+         }
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "chromeOptions": {
+         "args": [ "--disable-web-security", "--proxy-server=localhost:56388", "--headless" ],
+         "useAutomationExtension": false
+      },
+      "cssSelectorsEnabled": true,
+      "javascriptEnabled": true,
+      "nativeEvents": false,
+      "rotatable": false,
+      "takesScreenshot": false,
+      "version": ""
+   }
+}
+[1521661435.880][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1521661435.880][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1521661435.881][INFO]: Launching chrome: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --disable-web-resources --disable-web-security --enable-automation --enable-logging --force-fieldtrials=SiteIsolationExtensions/Control --headless --ignore-certificate-errors --log-level=0 --metrics-recording-only --no-first-run --password-store=basic --proxy-server=localhost:56388 --remote-debugging-port=12775 --test-type=webdriver --use-mock-keychain --user-data-dir=/var/folders/86/8prxmwlx7w16856srsl8231h0000gn/T/.org.chromium.Chromium.FZndMk data:,
+[1521661435.881][DEBUG]: DevTools request: http://localhost:12775/json/version
+[1521661435.882][DEBUG]: DevTools request failed
+[1521661435.933][DEBUG]: DevTools request: http://localhost:12775/json/version
+[1521661435.934][DEBUG]: DevTools request failed
+[0321/194355.980334:ERROR:gpu_process_transport_factory.cc(1019)] Lost UI shared context.
+
+DevTools listening on ws://127.0.0.1:12775/devtools/browser/e7c32116-87f8-4b1e-9b0b-e1de7db4483d
+[1521661435.984][DEBUG]: DevTools request: http://localhost:12775/json/version
+[1521661436.012][DEBUG]: DevTools response: {
+   "Browser": "HeadlessChrome/65.0.3325.162",
+   "Protocol-Version": "1.2",
+   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/65.0.3325.162 Safari/537.36",
+   "V8-Version": "6.5.254.36",
+   "WebKit-Version": "537.36 (@5d04e9e9c8ce31bee0923a8c326a7e9e19c492a3)",
+   "webSocketDebuggerUrl": "ws://localhost:12775/devtools/browser/e7c32116-87f8-4b1e-9b0b-e1de7db4483d"
+}
+
+[1521661436.016][DEBUG]: DevTools request: http://localhost:12775/json
+[1521661436.017][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:12775/devtools/page/1DC1C88499985EC988A749946A3C1D1",
+   "id": "1DC1C88499985EC988A749946A3C1D1",
+   "title": "",
+   "type": "page",
+   "url": "data:,",
+   "webSocketDebuggerUrl": "ws://localhost:12775/devtools/page/1DC1C88499985EC988A749946A3C1D1"
+} ]
+
+[1521661436.018][INFO]: resolved localhost to ["127.0.0.1","::1"]
+[1521661436.019][DEBUG]: DEVTOOLS COMMAND Security.setIgnoreCertificateErrors (id=1) {
+   "ignore": true
+}
+[1521661436.019][DEBUG]: DEVTOOLS RESPONSE Security.setIgnoreCertificateErrors (id=1) {
+
+}
+[1521661436.019][DEBUG]: DevTools request: http://localhost:12775/json
+[1521661436.020][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:12775/devtools/page/1DC1C88499985EC988A749946A3C1D1",
+   "id": "1DC1C88499985EC988A749946A3C1D1",
+   "title": "",
+   "type": "page",
+   "url": "data:,",
+   "webSocketDebuggerUrl": "ws://localhost:12775/devtools/page/1DC1C88499985EC988A749946A3C1D1"
+} ]
+
+[1521661436.020][INFO]: resolved localhost to ["127.0.0.1","::1"]
+[1521661436.021][DEBUG]: DEVTOOLS COMMAND Log.enable (id=1) {
+
+}
+[1521661436.021][DEBUG]: DEVTOOLS COMMAND DOM.getDocument (id=2) {
+
+}
+[1521661436.021][DEBUG]: DEVTOOLS COMMAND Target.setAttachToFrames (id=3) {
+   "value": true
+}
+[1521661436.021][DEBUG]: DEVTOOLS COMMAND Page.enable (id=4) {
+
+}
+[1521661436.021][DEBUG]: DEVTOOLS COMMAND Page.enable (id=5) {
+
+}
+[1521661436.021][DEBUG]: DEVTOOLS RESPONSE Target.setAttachToFrames (id=3) {
+
+}
+[1521661436.098][DEBUG]: DEVTOOLS RESPONSE Log.enable (id=1) {
+
+}
+[1521661436.099][DEBUG]: DEVTOOLS RESPONSE DOM.getDocument (id=2) {
+   "root": {
+      "backendNodeId": 2,
+      "baseURL": "data:,",
+      "childNodeCount": 1,
+      "children": [ {
+         "attributes": [  ],
+         "backendNodeId": 3,
+         "childNodeCount": 2,
+         "children": [ {
+            "attributes": [  ],
+            "backendNodeId": 4,
+            "childNodeCount": 0,
+            "localName": "head",
+            "nodeId": 3,
+            "nodeName": "HEAD",
+            "nodeType": 1,
+            "nodeValue": "",
+            "parentId": 2
+         }, {
+            "attributes": [  ],
+            "backendNodeId": 5,
+            "childNodeCount": 1,
+            "localName": "body",
+            "nodeId": 4,
+            "nodeName": "BODY",
+            "nodeType": 1,
+            "nodeValue": "",
+            "parentId": 2
+         } ],
+         "frameId": "1DC1C88499985EC988A749946A3C1D1",
+         "localName": "html",
+         "nodeId": 2,
+         "nodeName": "HTML",
+         "nodeType": 1,
+         "nodeValue": "",
+         "parentId": 1
+      } ],
+      "documentURL": "data:,",
+      "localName": "",
+      "nodeId": 1,
+      "nodeName": "#document",
+      "nodeType": 9,
+      "nodeValue": "",
+      "xmlVersion": ""
+   }
+}
+[1521661436.099][DEBUG]: DEVTOOLS RESPONSE Page.enable (id=4) {
+
+}
+[1521661436.099][DEBUG]: DEVTOOLS RESPONSE Page.enable (id=5) {
+
+}
+[1521661436.099][DEBUG]: DEVTOOLS COMMAND Target.setAutoAttach (id=6) {
+   "autoAttach": true,
+   "waitForDebuggerOnStart": false
+}
+[1521661436.100][DEBUG]: DEVTOOLS EVENT Page.loadEventFired {
+   "timestamp": 7346.547056
+}
+[1521661436.100][DEBUG]: DEVTOOLS EVENT Page.frameStoppedLoading {
+   "frameId": "1DC1C88499985EC988A749946A3C1D1"
+}
+[1521661436.100][DEBUG]: DEVTOOLS EVENT Page.domContentEventFired {
+   "timestamp": 7346.547293
+}
+[1521661436.100][DEBUG]: DEVTOOLS EVENT DOM.documentUpdated {
+
+}
+[1521661436.100][DEBUG]: DEVTOOLS COMMAND DOM.getDocument (id=7) {
+
+}
+[1521661436.104][DEBUG]: DEVTOOLS RESPONSE Target.setAutoAttach (id=6) {
+
+}
+[1521661436.104][DEBUG]: DEVTOOLS RESPONSE DOM.getDocument (id=7) {
+   "root": {
+      "backendNodeId": 2,
+      "baseURL": "data:,",
+      "childNodeCount": 1,
+      "children": [ {
+         "attributes": [  ],
+         "backendNodeId": 3,
+         "childNodeCount": 2,
+         "children": [ {
+            "attributes": [  ],
+            "backendNodeId": 4,
+            "childNodeCount": 0,
+            "localName": "head",
+            "nodeId": 7,
+            "nodeName": "HEAD",
+            "nodeType": 1,
+            "nodeValue": "",
+            "parentId": 6
+         }, {
+            "attributes": [  ],
+            "backendNodeId": 5,
+            "childNodeCount": 1,
+            "localName": "body",
+            "nodeId": 8,
+            "nodeName": "BODY",
+            "nodeType": 1,
+            "nodeValue": "",
+            "parentId": 6
+         } ],
+         "frameId": "1DC1C88499985EC988A749946A3C1D1",
+         "localName": "html",
+         "nodeId": 6,
+         "nodeName": "HTML",
+         "nodeType": 1,
+         "nodeValue": "",
+         "parentId": 5
+      } ],
+      "documentURL": "data:,",
+      "localName": "",
+      "nodeId": 5,
+      "nodeName": "#document",
+      "nodeType": 9,
+      "nodeValue": "",
+      "xmlVersion": ""
+   }
+}
+[1521661436.105][DEBUG]: DEVTOOLS COMMAND Runtime.enable (id=8) {
+
+}
+[1521661436.108][DEBUG]: DEVTOOLS EVENT Runtime.executionContextCreated {
+   "context": {
+      "auxData": {
+         "frameId": "1DC1C88499985EC988A749946A3C1D1",
+         "isDefault": true
+      },
+      "id": 1,
+      "name": "",
+      "origin": "://"
+   }
+}
+[1521661436.108][DEBUG]: DEVTOOLS RESPONSE Runtime.enable (id=8) {
+
+}
+[1521661436.108][DEBUG]: DEVTOOLS COMMAND Page.enable (id=9) {
+
+}
+[1521661436.109][DEBUG]: DEVTOOLS RESPONSE Page.enable (id=9) {
+
+}
+[1521661436.109][DEBUG]: DEVTOOLS COMMAND Runtime.enable (id=10) {
+
+}
+[1521661436.109][DEBUG]: DEVTOOLS RESPONSE Runtime.enable (id=10) {
+
+}
+[1521661436.109][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=11) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1521661436.113][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=11) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": 1
+      }
+   }
+}
+[1521661436.113][INFO]: RESPONSE InitSession {
+   "acceptInsecureCerts": true,
+   "acceptSslCerts": true,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "chromedriverVersion": "2.36.540469 (1881fd7f8641508feb5166b7cae561d87723cfa8)",
+      "userDataDir": "/var/folders/86/8prxmwlx7w16856srsl8231h0000gn/T/.org.chromium.Chromium.FZndMk"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "handlesAlerts": true,
+   "hasTouchScreen": false,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "mobileEmulationEnabled": false,
+   "nativeEvents": true,
+   "networkConnectionEnabled": false,
+   "pageLoadStrategy": "normal",
+   "platform": "Mac OS X",
+   "rotatable": false,
+   "setWindowRect": true,
+   "~~~": "..."
+}
+[1521661436.149][INFO]: COMMAND Navigate {
+   "url": "https://example.net/"
+}
+[1521661436.149][INFO]: Waiting for pending navigations...
+[1521661436.149][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=12) {
+   "expression": "1"
+}
+[1521661436.150][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=12) {
+   "result": {
+      "description": "1",
+      "type": "number",
+      "value": 1
+   }
+}
+[1521661436.151][INFO]: Done waiting for pending navigations. Status: ok
+[1521661436.151][DEBUG]: DEVTOOLS COMMAND Page.navigate (id=13) {
+   "url": "https://example.net/"
+}
+[1521661444.838][SEVERE]: Unable to receive message from renderer
+[1521661444.838][INFO]: Waiting for pending navigations...
+[1521661444.838][INFO]: Done waiting for pending navigations. Status: disconnected: not connected to DevTools
+[1521661444.838][DEBUG]: DevTools request: http://localhost:12775/json
+[1521661444.839][DEBUG]: DevTools request failed
+[1521661444.839][INFO]: RESPONSE Navigate
+[1521661444.843][INFO]: COMMAND GetSource {
+
+}
+[1521661444.844][INFO]: resolved localhost to ["127.0.0.1","::1"]
+[1521661444.844][DEBUG]: failed to connect to localhost (error -102)
+[1521661444.844][DEBUG]: DevTools request: http://localhost:12775/json
+[1521661444.845][DEBUG]: DevTools request failed
+[1521661444.845][INFO]: RESPONSE GetSource chrome not reachable
+  (Session info: headless chrome=65.0.3325.162)
+[1521661444.850][INFO]: COMMAND CloseWindow {
+
+}
+[1521661444.850][DEBUG]: DevTools request: http://localhost:12775/json
+[1521661444.851][DEBUG]: DevTools request failed
+[1521661444.851][INFO]: RESPONSE CloseWindow chrome not reachable
+  (Session info: headless chrome=65.0.3325.162)
