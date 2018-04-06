@@ -36,7 +36,14 @@ capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
 
 begin
   puts "Starting Chrome with #{chrome_args.inspect}"
-  driver = Selenium::WebDriver.for(:remote, desired_capabilities: capabilities)
+  driver = Selenium::WebDriver.for(
+    :chrome,
+    desired_capabilities: capabilities,
+    driver_opts: {
+      verbose: true,
+      log_path: 'log/chromedriver.log'
+    }
+  )
 
   puts "Navigating to page"
   driver.navigate.to 'https://example.net/'
