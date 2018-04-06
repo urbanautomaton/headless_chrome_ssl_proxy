@@ -1,46 +1,30 @@
-require 'pry'
 require 'logger'
 require 'selenium/webdriver'
-require 'billy'
 
-Billy.configure do |config|
-  config.logger = Logger.new('log/billy.log')
-end
-
-class Billy::ProxyConnection
-  alias_method :orig_on_message_complete, :on_message_complete
-
-  def receive_data(data)
-    if data =~ /example.net/
-      puts
-      puts "DATADATADATA"
-      puts data
-      puts "DATADATADATA"
-      puts
-    end
-    @parser << data
-  end
-
-  def on_message_complete
-    puts [@parser.http_method, @parser.request_url, @parser.headers.inspect].join(" ")
-    orig_on_message_complete
-  end
-
-  def restart_with_ssl(url)
-    @ssl = url
-    @parser = Http::Parser.new(self)
-    puts "Responding to CONNECT"
-    send_data("HTTP/1.1 200 Connection established\r\nConnection: keep-alive\r\nVia: 1.1 puffing-billy\r\n\r\n")
-    puts "Starting TLS"
-    start_tls(certificate_chain(url))
-  end
-end
-
-chrome_args = [
-  "--disable-web-security",
-  "--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}"
-]
+chrome_args = [ "--disable-web-security" ]
 chrome_args.push("--headless") if ENV["HEADLESS"]
+
+case ENV['PROXY']
+when 'billy' then
+  require 'billy'
+  Billy.configure do |config|
+    config.logger = Logger.new('log/billy.log')
+    config.proxy_host = '127.0.0.1'
+    config.proxy_port = 8081
+  end
+  chrome_args.push("--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}")
+  puts "Billy proxy started on #{Billy.proxy.host}:#{Billy.proxy.port}"
+when 'browsermob' then
+  require 'browsermob/proxy'
+  server = BrowserMob::Proxy::Server.new("bin/browsermob-proxy-2.1.4/bin/browsermob-proxy", log: false)
+  server.start
+  proxy = server.create_proxy
+  chrome_args.push("--proxy-server=#{proxy.host}:#{proxy.port}")
+  puts "Browsermob proxy started on #{Billy.proxy.host}:#{Billy.proxy.port}"
+else
+  warn "Unrecognised PROXY (billy|browsermob)"
+  exit 1
+end
 
 capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
   "chromeOptions" => {
@@ -51,7 +35,10 @@ capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
 )
 
 begin
+  puts "Starting Chrome with #{chrome_args.inspect}"
   driver = Selenium::WebDriver.for(:remote, desired_capabilities: capabilities)
+
+  puts "Navigating to page"
   driver.navigate.to 'https://example.net/'
 
   if driver.page_source.include?('Example Domain')

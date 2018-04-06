@@ -23,14 +23,21 @@ Clone the repo and install dependencies:
 
 Run the test without headless mode:
 
-    $ bundle exec ruby repro.rb
+    $ PROXY=billy bundle exec ruby repro.rb
+    Billy proxy started on 127.0.0.1:8081
+    Starting Chrome with ["--disable-web-security", "--proxy-server=127.0.0.1:8081"]
+    Navigating to page
     Pass!
 
 This should pass.
 
 Run the test in headless mode:
 
-    $ HEADLESS=true bundle exec ruby repro.rb
+    $ PROXY=billy HEADLESS=true bundle exec ruby repro.rb
+    Billy proxy started on 127.0.0.1:8081
+    Starting Chrome with ["--disable-web-security", "--headless", "--proxy-server=127.0.0.1:8081"]
+    Navigating to page
+
 
 This should block for ~1 minute, then fail with a `Errno::ECONNREFUSED`
 (itself occurring in an attempt to recover from a `Net::ReadTimeout`).
