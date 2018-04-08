@@ -37,7 +37,7 @@ function finish {
   --metrics-recording-only \
   --no-first-run \
   --password-store=basic \
-  "--proxy-server=127.0.0.1:${port}" \
+  "--proxy-server=localhost:${port}" \
   --test-type=webdriver \
   --use-mock-keychain \
   --user-data-dir="${data_dir}" \
