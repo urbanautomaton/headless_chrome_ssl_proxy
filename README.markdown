@@ -38,9 +38,17 @@ Run the test in headless mode:
     Starting Chrome with ["--disable-web-security", "--headless", "--proxy-server=127.0.0.1:8081"]
     Navigating to page
 
-
 This should block for ~1 minute, then fail with a `Errno::ECONNREFUSED`
 (itself occurring in an attempt to recover from a `Net::ReadTimeout`).
+
+The repro also contains two other proxy options:
+
+* [browsermob-proxy](https://github.com/lightbody/browsermob-proxy): `$ PROXY=browsermob HEADLESS=true bundle exec ruby repro.rb`
+* [mitmproxy](https://mitmproxy.org/): `$ PROXY=mitmproxy HEADLESS=true bundle exec ruby repro.rb`
+
+For browsermob-proxy you'll need to [download
+it](https://bmp.lightbody.net/) and update the path in the script
+accordingly. For mitmproxy, install according to your system.
 
 ## Versions
 

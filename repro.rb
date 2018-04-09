@@ -2,7 +2,7 @@ require 'logger'
 require 'selenium/webdriver'
 
 chrome_args = [ "--disable-web-security" ]
-chrome_args.push("--headless") if ENV["HEADLESS"]
+chrome_args.push("--headless") if ENV["HEADLESS"] == 'true'
 
 case ENV['PROXY']
 when 'billy' then
