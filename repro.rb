@@ -31,7 +31,8 @@ end
 capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
   "chromeOptions" => {
     "args" => chrome_args,
-    "useAutomationExtension" => false
+    "useAutomationExtension" => false,
+    "binary" => "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"
   },
   "acceptInsecureCerts" => true
 )
