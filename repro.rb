@@ -21,8 +21,10 @@ when 'browsermob' then
   proxy = server.create_proxy
   chrome_args.push("--proxy-server=#{proxy.host}:#{proxy.port}")
   puts "Browsermob proxy started on #{Billy.proxy.host}:#{Billy.proxy.port}"
+when 'mitmproxy' then
+  chrome_args.push("--proxy-server=127.0.0.1:8081")
 else
-  warn "Unrecognised PROXY (billy|browsermob)"
+  warn "Unrecognised PROXY (billy|browsermob|mitmproxy)"
   exit 1
 end
 
