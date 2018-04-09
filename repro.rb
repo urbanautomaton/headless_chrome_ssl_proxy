@@ -22,6 +22,7 @@ when 'browsermob' then
   chrome_args.push("--proxy-server=#{proxy.host}:#{proxy.port}")
   puts "Browsermob proxy started on #{Billy.proxy.host}:#{Billy.proxy.port}"
 when 'mitmproxy' then
+  mitmproxy_pid = Process.spawn('mitmdump -q')
   chrome_args.push("--proxy-server=127.0.0.1:8080")
 else
   warn "Unrecognised PROXY (billy|browsermob|mitmproxy)"
@@ -37,26 +38,27 @@ capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
   "acceptInsecureCerts" => true
 )
 
-begin
-  puts "Starting Chrome with #{chrome_args.inspect}"
-  driver = Selenium::WebDriver.for(
-    :chrome,
-    desired_capabilities: capabilities,
-    driver_opts: {
-      verbose: true,
-      log_path: 'log/chromedriver.log'
-    }
-  )
+puts "Starting Chrome with #{chrome_args.inspect}"
+driver = Selenium::WebDriver.for(
+  :chrome,
+  desired_capabilities: capabilities,
+  driver_opts: {
+    verbose: true,
+    log_path: 'log/chromedriver.log'
+  }
+)
 
-  puts "Navigating to page"
-  driver.navigate.to 'https://example.net/'
+puts "Navigating to page"
+driver.navigate.to 'https://example.net/'
 
-  if driver.page_source.include?('Example Domain')
-    puts 'Pass!'
-  else
-    puts 'Fail!'
-  end
-ensure
+if driver.page_source.include?('Example Domain')
+  puts 'Pass!'
+else
+  puts 'Fail!'
+end
+
+at_exit do
+  Process.kill('TERM', mitmproxy_pid) if mitmproxy_pid
   if driver
     driver.close
     driver.quit
