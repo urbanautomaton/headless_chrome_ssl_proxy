@@ -20,7 +20,7 @@ when 'browsermob' then
   server.start
   proxy = server.create_proxy
   chrome_args.push("--proxy-server=#{proxy.host}:#{proxy.port}")
-  puts "Browsermob proxy started on #{Billy.proxy.host}:#{Billy.proxy.port}"
+  puts "Browsermob proxy started on #{proxy.host}:#{proxy.port}"
 when 'mitmproxy' then
   mitmproxy_pid = Process.spawn('mitmdump -q')
   chrome_args.push("--proxy-server=127.0.0.1:8080")
