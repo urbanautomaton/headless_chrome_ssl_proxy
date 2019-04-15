@@ -11,8 +11,10 @@ when 'billy' then
     config.logger = Logger.new('log/billy.log')
     config.proxy_host = '127.0.0.1'
     config.proxy_port = 8081
+    config.non_whitelisted_requests_disabled = true
   end
   chrome_args.push("--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}")
+  Billy.proxy.stub("https://example.net:443/").and_return(body: "Example Domain")
   puts "Billy proxy started on #{Billy.proxy.host}:#{Billy.proxy.port}"
 when 'browsermob' then
   require 'browsermob/proxy'
@@ -53,6 +55,7 @@ driver.navigate.to 'https://example.net/'
 if driver.page_source.include?('Example Domain')
   puts 'Pass!'
 else
+  puts driver.page_source
   puts 'Fail!'
 end
 
